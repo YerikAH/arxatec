@@ -26,12 +26,12 @@
     </style>
     <title>Arxatec - Software legal</title>
   </head>
-  <body>
-    <div class="bg-neutral-900">
+  <body class="overflow-x-hidden">
+    <div class="bg-neutral-900 relative">
       <header class="absolute inset-x-0 top-0 z-50">
         <nav
           aria-label="Global"
-          class="flex items-center justify-between p-6 lg:px-8"
+          class="flex items-center justify-between p-6 lg:px-8 w-full max-w-7xl mx-auto"
         >
           <div class="flex lg:flex-1">
             <a href="#" class="-m-1.5 p-1.5">
@@ -191,94 +191,280 @@
       </div>
     </div>
 
-    <div class="bg-neutral-900 py-16 sm:py-24">
-      <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div
-          class="relative isolate overflow-hidden bg-neutral-800 px-6 py-24 after:pointer-events-none sm:px-24 xl:py-32 rounded-md"
+    <div class="bg-neutral-900 py-24 sm:py-32">
+      <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+        <h2
+          class="text-base/7 font-semibold text-neutral-400 w-full text-center"
         >
-          <h2
-            class="mx-auto max-w-3xl text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl font-serif"
-          >
-            Sé de los primeros en probar <br />
-            Arxatec
-          </h2>
-          <p
-            class="mx-auto mt-6 max-w-lg text-center text-base text-neutral-300"
-          >
-            Deja tu correo y te avisaremos cuando lancemos. Tendrás 1 mes gratis
-            para organizar tu empresa sin complicaciones.
-          </p>
-          <form class="mx-auto mt-10 flex max-w-md gap-x-4">
-            <label for="email-address" class="sr-only"
-              >Correo electrónico</label
+          Deploy faster
+        </h2>
+        <p
+          class="mt-2 max-w-lg text-4xl font-semibold mx-auto tracking-tight text-pretty text-neutral-50 sm:text-5xl font-serif text-center w-full"
+        >
+          Everything you need to deploy your app
+        </p>
+        <div
+          class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2"
+        >
+          <div class="relative lg:col-span-3">
+            <div
+              class="absolute inset-0 rounded-lg bg-neutral-800 max-lg:rounded-t-md lg:rounded-tl-md"
+            ></div>
+            <div
+              class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]"
             >
-            <input
-              id="email-address"
-              type="email"
-              name="email"
-              required
-              placeholder="Ingresa tu correo electrónico"
-              autocomplete="email"
-              class="min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/20 placeholder:text-neutral-400 focus:outline-2 focus:-outline-offset-2 focus:outline-neutral-500 sm:text-sm/6"
-            />
-            <button
-              type="submit"
-              class="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-neutral-900 hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              <img
+                src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-01-performance.png"
+                alt=""
+                class="h-80 object-cover object-left"
+              />
+              <div class="p-10 pt-4">
+                <h3 class="text-sm/4 font-semibold text-neutral-400">
+                  Performance
+                </h3>
+                <p
+                  class="mt-2 text-xl font-medium tracking-tight text-white font-serif"
+                >
+                  Lightning-fast builds
+                </p>
+                <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                  gravida justo et nulla efficitur, maximus egestas sem
+                  pellentesque.
+                </p>
+              </div>
+            </div>
+            <div
+              class="pointer-events-none absolute inset-0 rounded-lg shadow-sm max-lg:rounded-t-md lg:rounded-tl-md"
+            ></div>
+          </div>
+          <div class="relative lg:col-span-3">
+            <div
+              class="absolute inset-0 rounded-lg bg-neutral-800 lg:rounded-tr-md"
+            ></div>
+            <div
+              class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tr-[calc(2rem+1px)]"
             >
-              Reservar mi mes gratis
-            </button>
-          </form>
-          <svg
-            viewBox="0 0 1024 1024"
-            aria-hidden="true"
-            class="absolute top-1/2 left-1/2 -z-10 size-256 -translate-x-1/2"
-          >
-            <circle
-              r="512"
-              cx="512"
-              cy="512"
-              fill="url(#759c1415-0410-454c-8f7c-9a820de03641)"
-              fill-opacity="0.7"
-            />
-            <defs>
-              <radialGradient
-                id="759c1415-0410-454c-8f7c-9a820de03641"
-                r="1"
-                cx="0"
-                cy="0"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(512 512) rotate(90) scale(512)"
-              >
-                <stop stop-color="#7775D6" />
-                <stop offset="1" stop-color="#E935C1" stop-opacity="0" />
-              </radialGradient>
-            </defs>
-          </svg>
+              <img
+                src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-01-releases.png"
+                alt=""
+                class="h-80 object-cover object-left lg:object-right"
+              />
+              <div class="p-10 pt-4">
+                <h3 class="text-sm/4 font-semibold text-neutral-400">
+                  Releases
+                </h3>
+                <p
+                  class="mt-2 text-xl font-medium tracking-tight text-white font-serif"
+                >
+                  Push to deploy
+                </p>
+                <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">
+                  Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus
+                  massa, laoreet dapibus ex elit vitae odio.
+                </p>
+              </div>
+            </div>
+            <div
+              class="pointer-events-none absolute inset-0 rounded-lg shadow-sm lg:rounded-tr-md"
+            ></div>
+          </div>
+          <div class="relative lg:col-span-2">
+            <div
+              class="absolute inset-0 rounded-lg bg-neutral-800 lg:rounded-bl-md"
+            ></div>
+            <div
+              class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-bl-[calc(2rem+1px)]"
+            >
+              <img
+                src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-01-speed.png"
+                alt=""
+                class="h-80 object-cover object-left"
+              />
+              <div class="p-10 pt-4">
+                <h3 class="text-sm/4 font-semibold text-neutral-400">Speed</h3>
+                <p
+                  class="mt-2 text-xl font-medium tracking-tight text-white font-serif"
+                >
+                  Built for power users
+                </p>
+                <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">
+                  Sed congue eros non finibus molestie. Vestibulum euismod
+                  augue.
+                </p>
+              </div>
+            </div>
+            <div
+              class="pointer-events-none absolute inset-0 rounded-lg shadow-sm lg:rounded-bl-md"
+            ></div>
+          </div>
+          <div class="relative lg:col-span-2">
+            <div class="absolute inset-0 rounded-lg bg-neutral-800"></div>
+            <div
+              class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]"
+            >
+              <img
+                src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-01-integrations.png"
+                alt=""
+                class="h-80 object-cover"
+              />
+              <div class="p-10 pt-4">
+                <h3 class="text-sm/4 font-semibold text-neutral-400">
+                  Integrations
+                </h3>
+                <p
+                  class="mt-2 text-xl font-medium tracking-tight text-white font-serif"
+                >
+                  Connect your favorite tools
+                </p>
+                <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">
+                  Maecenas at augue sed elit dictum vulputate, in nisi aliquam
+                  maximus arcu.
+                </p>
+              </div>
+            </div>
+            <div
+              class="pointer-events-none absolute inset-0 rounded-lg shadow-sm"
+            ></div>
+          </div>
+          <div class="relative lg:col-span-2">
+            <div
+              class="absolute inset-0 rounded-lg bg-neutral-800 max-lg:rounded-b-md lg:rounded-br-md"
+            ></div>
+            <div
+              class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]"
+            >
+              <img
+                src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-01-network.png"
+                alt=""
+                class="h-80 object-cover"
+              />
+              <div class="p-10 pt-4">
+                <h3 class="text-sm/4 font-semibold text-neutral-400">
+                  Network
+                </h3>
+                <p
+                  class="mt-2 text-xl font-medium tracking-tight text-white font-serif"
+                >
+                  Globally distributed CDN
+                </p>
+                <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">
+                  Aenean vulputate justo commodo auctor vehicula in malesuada
+                  semper.
+                </p>
+              </div>
+            </div>
+            <div
+              class="pointer-events-none absolute inset-0 rounded-lg shadow-sm max-lg:rounded-b-md lg:rounded-br-md"
+            ></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> -->
     <div class="bg-neutral-900">
-      <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
-        <div class="mx-auto max-w-7xl">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 sm:py-24">
+        <div
+          class="mx-auto grid w-full lg:grid-cols-2 px-6 lg:px-8 py-16 bg-zinc-300 rounded-md"
+        >
+          <img
+            src="https://images.pexels.com/photos/5673501/pexels-photo-5673501.jpeg"
+            alt="Imagen de fondo"
+            class="w-full bg-neutral-800 object-cover h-full rounded-md"
+          />
+          <div
+            class="px-6 pt-16 pb-24 sm:pt-20 sm:pb-32 lg:col-start-2 lg:px-8 lg:pt-32"
+          >
+            <div class="mx-auto max-w-2xl lg:mr-0 lg:max-w-lg">
+              <h2 class="text-base font-semibold text-neutral-600">
+                Our track record
+              </h2>
+              <p
+                class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-neutral-900 sm:text-5xl font-serif"
+              >
+                Trusted by thousands of creators worldwide
+              </p>
+              <p class="mt-6 text-base text-neutral-600">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Maiores impedit perferendis suscipit eaque, iste dolor
+                cupiditate blanditiis ratione.
+              </p>
+              <dl
+                class="mt-16 grid max-w-xl grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 xl:mt-16"
+              >
+                <div
+                  class="flex flex-col gap-y-3 border-l border-neutral-600 pl-6"
+                >
+                  <dt class="text-sm/6 text-neutral-600">
+                    Creators on the platform
+                  </dt>
+                  <dd
+                    class="order-first text-4xl font-bold tracking-tight text-neutral-900 font-serif"
+                  >
+                    8,000+
+                  </dd>
+                </div>
+                <div
+                  class="flex flex-col gap-y-3 border-l border-neutral-600 pl-6"
+                >
+                  <dt class="text-sm/6 text-neutral-600">Flat platform fee</dt>
+                  <dd
+                    class="order-first text-4xl font-bold tracking-tight text-neutral-900 font-serif"
+                  >
+                    3%
+                  </dd>
+                </div>
+                <div
+                  class="flex flex-col gap-y-3 border-l border-neutral-600 pl-6"
+                >
+                  <dt class="text-sm/6 text-neutral-600">Uptime guarantee</dt>
+                  <dd
+                    class="order-first text-4xl font-bold tracking-tight text-neutral-900 font-serif"
+                  >
+                    99.9%
+                  </dd>
+                </div>
+                <div
+                  class="flex flex-col gap-y-3 border-l border-neutral-600 pl-6"
+                >
+                  <dt class="text-sm/6 text-neutral-600">
+                    Paid out to creators
+                  </dt>
+                  <dd
+                    class="order-first text-4xl font-bold tracking-tight text-neutral-900 font-serif"
+                  >
+                    $70M
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-neutral-900">
+      <div class="mx-auto max-w-7xl w-full py-24 sm:py-32 lg:px-8">
+        <div
+          class="mx-auto w-full px-12 sm:px-16 py-12 sm:py-24 bg-stone-300 rounded-md"
+        >
           <h2
-            class="text-4xl font-semibold tracking-tight text-white sm:text-5xl font-serif"
+            class="text-4xl font-semibold tracking-tight text-neutral-900 sm:text-5xl font-serif text-left"
           >
             Preguntas frecuentes
           </h2>
-          <dl class="mt-16 divide-y divide-white/10">
+
+          <dl class="mt-16 divide-y divide-neutral-900/10">
             <div class="py-6 first:pt-0 last:pb-0">
               <dt>
                 <button
                   type="button"
                   command="--toggle"
                   commandfor="faq-0"
-                  class="flex w-full items-start justify-between text-left text-white"
+                  class="flex w-full items-start justify-between text-left text-neutral-700"
                 >
-                  <span class="text-base/7 font-semibold"
-                    >What&#039;s the best thing about Switzerland?</span
+                  <span class="text-2xl font-bold font-serif"
+                    >¿Qué es Arxatec?</span
                   >
                   <span class="ml-6 flex h-7 items-center">
                     <svg
@@ -316,10 +502,14 @@
               </dt>
               <el-disclosure id="faq-0" class="contents">
                 <dd class="mt-2 pr-12">
-                  <p class="text-base/7 text-neutral-400">
+                  <p class="text-base text-neutral-700">
                     I don&#039;t know, but the flag is a big plus. Lorem ipsum
                     dolor sit amet consectetur adipisicing elit. Quas cupiditate
-                    laboriosam fugiat.
+                    laboriosam fugiat. Lorem ipsum, dolor sit amet consectetur
+                    adipisicing elit. Sint modi ipsam error numquam quis
+                    consectetur autem saepe dolorum, similique provident iure
+                    qui laborum eum aspernatur tenetur ratione officia cumque
+                    ducimus?
                   </p>
                 </dd>
               </el-disclosure>
@@ -330,9 +520,9 @@
                   type="button"
                   command="--toggle"
                   commandfor="faq-1"
-                  class="flex w-full items-start justify-between text-left text-white"
+                  class="flex w-full items-start justify-between text-left text-neutral-700"
                 >
-                  <span class="text-base/7 font-semibold"
+                  <span class="text-2xl font-bold font-serif"
                     >How do you make holy water?</span
                   >
                   <span class="ml-6 flex h-7 items-center">
@@ -371,7 +561,7 @@
               </dt>
               <el-disclosure id="faq-1" hidden class="contents">
                 <dd class="mt-2 pr-12">
-                  <p class="text-base/7 text-neutral-400">
+                  <p class="text-base text-neutral-700">
                     You boil the hell out of it. Lorem ipsum dolor sit amet
                     consectetur adipisicing elit. Magnam aut tempora vitae odio
                     inventore fuga aliquam nostrum quod porro. Delectus quia
@@ -386,9 +576,9 @@
                   type="button"
                   command="--toggle"
                   commandfor="faq-2"
-                  class="flex w-full items-start justify-between text-left text-white"
+                  class="flex w-full items-start justify-between text-left text-neutral-700"
                 >
-                  <span class="text-base/7 font-semibold"
+                  <span class="text-2xl font-bold font-serif"
                     >What do you call someone with no body and no nose?</span
                   >
                   <span class="ml-6 flex h-7 items-center">
@@ -427,7 +617,7 @@
               </dt>
               <el-disclosure id="faq-2" hidden class="contents">
                 <dd class="mt-2 pr-12">
-                  <p class="text-base/7 text-neutral-400">
+                  <p class="text-base text-neutral-700">
                     Nobody knows. Lorem ipsum dolor sit amet consectetur
                     adipisicing elit. Culpa, voluptas ipsa quia excepturi,
                     quibusdam natus exercitationem sapiente tempore labore
@@ -442,9 +632,9 @@
                   type="button"
                   command="--toggle"
                   commandfor="faq-3"
-                  class="flex w-full items-start justify-between text-left text-white"
+                  class="flex w-full items-start justify-between text-left text-neutral-700"
                 >
-                  <span class="text-base/7 font-semibold"
+                  <span class="text-2xl font-bold font-serif"
                     >Why do you never see elephants hiding in trees?</span
                   >
                   <span class="ml-6 flex h-7 items-center">
@@ -483,7 +673,7 @@
               </dt>
               <el-disclosure id="faq-3" hidden class="contents">
                 <dd class="mt-2 pr-12">
-                  <p class="text-base/7 text-neutral-400">
+                  <p class="text-base text-neutral-700">
                     Because they&#039;re so good at it. Lorem ipsum dolor sit
                     amet consectetur adipisicing elit. Quas cupiditate
                     laboriosam fugiat.
@@ -497,9 +687,9 @@
                   type="button"
                   command="--toggle"
                   commandfor="faq-4"
-                  class="flex w-full items-start justify-between text-left text-white"
+                  class="flex w-full items-start justify-between text-left text-neutral-700"
                 >
-                  <span class="text-base/7 font-semibold"
+                  <span class="text-2xl font-bold font-serif"
                     >Why can&#039;t you hear a pterodactyl go to the
                     bathroom?</span
                   >
@@ -539,7 +729,7 @@
               </dt>
               <el-disclosure id="faq-4" hidden class="contents">
                 <dd class="mt-2 pr-12">
-                  <p class="text-base/7 text-neutral-400">
+                  <p class="text-base text-neutral-700">
                     Because the pee is silent. Lorem ipsum dolor sit amet,
                     consectetur adipisicing elit. Ipsam, quas voluptatibus ex
                     culpa ipsum, aspernatur blanditiis fugiat ullam magnam
@@ -555,9 +745,9 @@
                   type="button"
                   command="--toggle"
                   commandfor="faq-5"
-                  class="flex w-full items-start justify-between text-left text-white"
+                  class="flex w-full items-start justify-between text-left text-neutral-700"
                 >
-                  <span class="text-base/7 font-semibold"
+                  <span class="text-2xl font-bold font-serif"
                     >Why did the invisible man turn down the job offer?</span
                   >
                   <span class="ml-6 flex h-7 items-center">
@@ -596,7 +786,7 @@
               </dt>
               <el-disclosure id="faq-5" hidden class="contents">
                 <dd class="mt-2 pr-12">
-                  <p class="text-base/7 text-neutral-400">
+                  <p class="text-base text-neutral-700">
                     He couldn&#039;t see himself doing it. Lorem ipsum dolor
                     sit, amet consectetur adipisicing elit. Eveniet perspiciatis
                     officiis corrupti tenetur. Temporibus ut voluptatibus,
@@ -609,6 +799,48 @@
         </div>
       </div>
     </div>
+
+    <div class="bg-neutral-900 py-16 sm:py-24">
+      <div class="mx-auto max-w-7xl w-full sm:px-6 lg:px-8">
+        <div
+          class="relative isolate overflow-hidden bg-neutral-800 px-6 py-24 after:pointer-events-none sm:px-24 xl:py-32 rounded-md"
+        >
+          <h2
+            class="mx-auto max-w-3xl text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl font-serif"
+          >
+            Sé de los primeros en probar <br />
+            Arxatec
+          </h2>
+          <p
+            class="mx-auto mt-6 max-w-lg text-center text-base text-neutral-300"
+          >
+            Deja tu correo y te avisaremos cuando lancemos. Tendrás 1 mes gratis
+            para organizar tu empresa sin complicaciones.
+          </p>
+          <form class="mx-auto mt-10 flex max-w-md gap-x-4">
+            <label for="email-address" class="sr-only"
+              >Correo electrónico</label
+            >
+            <input
+              id="email-address"
+              type="email"
+              name="email"
+              required
+              placeholder="Ingresa tu correo electrónico"
+              autocomplete="email"
+              class="min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/20 placeholder:text-neutral-400 focus:outline-2 focus:-outline-offset-2 focus:outline-neutral-500 sm:text-sm/6"
+            />
+            <button
+              type="submit"
+              class="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-neutral-900 hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              Reservar mi mes gratis
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <footer class="bg-neutral-900">
       <div class="mx-auto max-w-7xl px-6 pt-16 pb-8 sm:pt-24 lg:px-8 lg:pt-32">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
