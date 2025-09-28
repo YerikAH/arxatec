@@ -1,10 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Arxatec - La plataforma legal que conecta abogados y clientes en minutos. Gestiona casos, comunica con clientes y organiza tu despacho de forma segura y eficiente."
+    />
+    <meta
+      name="keywords"
+      content="abogados, clientes, casos legales, plataforma legal, gestión de casos, despacho legal, consultoría jurídica"
+    />
+    <meta name="author" content="Arxatec" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://arxatec.net" />
+
+    <!-- SEO Files -->
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://arxatec.net" />
+    <meta
+      property="og:title"
+      content="Arxatec - Software legal que une abogados y clientes"
+    />
+    <meta
+      property="og:description"
+      content="Conecta con clientes, gestiona tus casos y organiza tu despacho en minutos. Para abogados y clientes, todo en un solo lugar."
+    />
+    <meta
+      property="og:image"
+      content="https://arxatec.net/assets/og_image.png"
+    />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://arxatec.net" />
+    <meta
+      property="twitter:title"
+      content="Arxatec - Software legal que une abogados y clientes"
+    />
+    <meta
+      property="twitter:description"
+      content="Conecta con clientes, gestiona tus casos y organiza tu despacho en minutos. Para abogados y clientes, todo en un solo lugar."
+    />
+    <meta
+      property="twitter:image"
+      content="https://arxatec.net/assets/og_image.png"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Arxatec",
+        "description": "Plataforma legal que conecta abogados y clientes para gestión de casos",
+        "url": "https://arxatec.net",
+        "applicationCategory": "LegalApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Prueba gratuita de 1 mes"
+        }
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
       rel="stylesheet"
@@ -13,40 +80,95 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
-      type="module"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-      @theme {
-        --font-sans: "DM Sans", sans-serif;
-        --font-serif: "Cormorant Garamond", serif;
-      }
-    </style>
-    <title>Arxatec - Software legal</title>
+
+    <link rel="stylesheet" href="./styles/input.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/output.css" />
+
+    <title>Arxatec - Plataforma Legal</title>
   </head>
-  <body class="overflow-x-hidden">
-    <div class="bg-neutral-900 relative">
-      <header class="absolute inset-x-0 top-0 z-50">
+  <body class="overflow-x-hidden bg-neutral-900">
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <div
+      id="announcement-banner"
+      class="pointer-events-none fixed inset-x-0 bottom-0 pb-5 px-4 sm:px-8 z-50"
+      role="banner"
+      aria-label="Anuncio de lanzamiento"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="pointer-events-auto flex items-center w-full justify-between gap-x-4 sm:gap-x-6 bg-neutral-100 px-4 sm:px-6 py-2.5 rounded-md sm:py-3 sm:pr-3.5 sm:pl-4 shadow-lg"
+        >
+          <p class="text-sm/6 text-neutral-900 flex-1">
+            <span class="block sm:inline">
+              <strong class="font-semibold">Arxatec llega pronto:</strong>
+              <span class="block sm:inline mt-1 sm:mt-0"
+                >suscríbete ahora y asegura tu prueba gratuita. Obtén
+                promociones exclusivas y acceso anticipado a la
+                plataforma.</span
+              >
+            </span>
+          </p>
+          <button
+            id="dismiss-banner"
+            type="button"
+            class="-m-3 flex-none p-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-500 rounded-md hover:bg-neutral-200 transition-colors"
+            aria-label="Cerrar anuncio"
+          >
+            <span class="sr-only">Cerrar anuncio</span>
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              data-slot="icon"
+              aria-hidden="true"
+              class="size-5 text-neutral-900"
+            >
+              <path
+                d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="absolute pointer-events-none top-0 z-[-2] h-screen w-screen bg-neutral-900 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,255,255,0.1),rgba(255,255,255,0))]"
+    ></div>
+
+    <div class="relative">
+      <header class="absolute inset-x-0 top-0 z-50" role="banner">
         <nav
-          aria-label="Global"
-          class="flex items-center justify-between p-6 lg:px-8 w-full max-w-7xl mx-auto"
+          aria-label="Navegación principal"
+          class="flex items-center justify-between p-4 sm:p-6 lg:px-8 w-full max-w-7xl mx-auto"
         >
           <div class="flex lg:flex-1">
-            <a href="#" class="-m-1.5 p-1.5">
-              <span class="sr-only">Arxatec</span>
-              <img src="./assets/logo.png" alt="" class="h-10 w-auto" />
+            <a
+              href="#"
+              class="-m-1.5 p-1.5"
+              aria-label="Ir a la página principal de Arxatec"
+            >
+              <span class="sr-only">Arxatec - Página principal</span>
+              <img
+                src="./assets/logo.png"
+                alt="Logo de Arxatec"
+                class="h-8 sm:h-10 w-auto"
+              />
             </a>
           </div>
           <div class="flex lg:hidden">
             <button
+              id="mobile-menu-button"
               type="button"
               command="show-modal"
               commandfor="mobile-menu"
-              class="-m-2.5 inline-flex items-center justify-center rounded-sm p-2.5 text-neutral-700"
+              class="-m-2.5 inline-flex items-center justify-center rounded-sm p-2.5 text-neutral-300 hover:text-neutral-50 focus:outline-2 focus:outline-offset-2 focus:outline-neutral-500 transition-colors"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Abrir menú de navegación"
             >
-              <span class="sr-only">Open main menu</span>
+              <span class="sr-only">Abrir menú principal</span>
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -64,38 +186,64 @@
               </svg>
             </button>
           </div>
-          <div class="hidden lg:flex lg:gap-x-12">
-            <a href="#" class="text-sm text-neutral-300">Producto</a>
-            <a href="#" class="text-sm text-neutral-300">Sobre nosotros</a>
-            <a href="#" class="text-sm text-neutral-300">Funcionalidades</a>
-            <a href="#" class="text-sm text-neutral-300"
+          <div class="hidden lg:flex lg:gap-x-8 xl:gap-x-12">
+            <a
+              href="#producto"
+              class="text-sm text-neutral-300 hover:text-neutral-50 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-neutral-500 rounded-sm px-2 py-1"
+              >Producto</a
+            >
+            <a
+              href="#solucion"
+              class="text-sm text-neutral-300 hover:text-neutral-50 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-neutral-500 rounded-sm px-2 py-1"
+              >Nuestra solución</a
+            >
+            <a
+              href="#faq"
+              class="text-sm text-neutral-300 hover:text-neutral-50 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-neutral-500 rounded-sm px-2 py-1"
               >Preguntas frecuentes</a
             >
           </div>
           <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" class="text-sm font-semibold text-neutral-50"
+            <a
+              href="#registro"
+              class="text-sm font-semibold text-neutral-50 hover:text-neutral-200 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-neutral-500 rounded-sm px-3 py-2"
               >Reservar mi mes gratis</a
             >
           </div>
         </nav>
         <el-dialog>
-          <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+          <dialog
+            id="mobile-menu"
+            class="backdrop:bg-transparent lg:hidden"
+            aria-labelledby="mobile-menu-title"
+            aria-modal="true"
+          >
             <div tabindex="0" class="fixed inset-0 focus:outline-none">
               <el-dialog-panel
-                class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-neutral-900/10"
+                class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-neutral-900/90 backdrop-blur-3xl p-6 sm:max-w-sm sm:ring-1 sm:ring-neutral-900/10 shadow-xl"
               >
                 <div class="flex items-center justify-between">
-                  <a href="#" class="-m-1.5 p-1.5">
-                    <span class="sr-only">Arxatec</span>
-                    <img src="./assets/logo.png" alt="" class="h-8 w-auto" />
+                  <a
+                    href="#"
+                    class="-m-1.5 p-1.5"
+                    aria-label="Ir a la página principal de Arxatec"
+                  >
+                    <span class="sr-only">Arxatec - Página principal</span>
+                    <img
+                      src="./assets/logo.png"
+                      alt="Logo de Arxatec"
+                      class="h-8 w-auto"
+                    />
                   </a>
                   <button
+                    id="mobile-menu-close"
                     type="button"
                     command="close"
                     commandfor="mobile-menu"
-                    class="-m-2.5 rounded-sm p-2.5 text-neutral-700"
+                    class="-m-2.5 rounded-sm p-2.5 text-white hover:bg-neutral-800 focus:outline-2 focus:outline-offset-2 focus:outline-neutral-700 transition-colors"
+                    aria-label="Cerrar menú de navegación"
                   >
-                    <span class="sr-only">Close menu</span>
+                    <span class="sr-only">Cerrar menú</span>
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -103,7 +251,7 @@
                       stroke-width="1.5"
                       data-slot="icon"
                       aria-hidden="true"
-                      class="size-6"
+                      class="size-6 text-white"
                     >
                       <path
                         d="M6 18 18 6M6 6l12 12"
@@ -113,327 +261,251 @@
                     </svg>
                   </button>
                 </div>
-                <div class="mt-6 flow-root">
+                <nav class="mt-6 flow-root" aria-label="Navegación móvil">
+                  <h2 id="mobile-menu-title" class="sr-only">
+                    Menú de navegación
+                  </h2>
                   <div class="-my-6 divide-y divide-neutral-500/10">
-                    <div class="space-y-2 py-6">
+                    <div class="space-y-2 py-6" role="list">
                       <a
-                        href="#"
-                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-neutral-900 hover:bg-neutral-50"
-                        >Produto</a
+                        href="#producto"
+                        class="-mx-3 block rounded-lg px-3 py-2 text-sm font-semibold text-neutral-50 hover:bg-neutral-800 focus:bg-neutral-800 focus:outline-2 focus:outline-offset-2 focus:outline-neutral-700 transition-colors"
+                        role="listitem"
+                        >Producto</a
                       >
                       <a
-                        href="#"
-                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-neutral-900 hover:bg-neutral-50"
-                        >Funcionalidades</a
+                        href="#solucion"
+                        class="-mx-3 block rounded-lg px-3 py-2 text-sm font-semibold text-neutral-50 hover:bg-neutral-800 focus:bg-neutral-800 focus:outline-2 focus:outline-offset-2 focus:outline-neutral-700 transition-colors"
+                        role="listitem"
+                        >Nuestra solución</a
                       >
                       <a
-                        href="#"
-                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-neutral-900 hover:bg-neutral-50"
+                        href="#faq"
+                        class="-mx-3 block rounded-lg px-3 py-2 text-sm font-semibold text-neutral-50 hover:bg-neutral-800 focus:bg-neutral-800 focus:outline-2 focus:outline-offset-2 focus:outline-neutral-700 transition-colors"
+                        role="listitem"
                         >Preguntas frecuentes</a
-                      >
-                      <a
-                        href="#"
-                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-neutral-900 hover:bg-neutral-50"
-                        >Sobre nosotros</a
                       >
                     </div>
                     <div class="py-6">
                       <a
-                        href="#"
-                        class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-neutral-900 hover:bg-neutral-50"
+                        href="#registro"
+                        class="-mx-3 block rounded-lg px-3 py-2.5 text-sm font-semibold text-neutral-900 bg-neutral-50 hover:bg-neutral-200 focus:bg-neutral-200 focus:outline-2 focus:outline-offset-2 focus:outline-neutral-700 transition-colors text-center"
                         >Reservar mi mes gratis</a
                       >
                     </div>
                   </div>
-                </div>
+                </nav>
               </el-dialog-panel>
             </div>
           </dialog>
         </el-dialog>
       </header>
 
-      <div class="relative isolate pt-14">
-        <div class="py-24 sm:py-32 lg:pb-40">
-          <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div class="mx-auto max-w-2xl text-center">
+      <main id="main-content" class="relative isolate pt-14">
+        <section
+          class="pb-24 sm:pb-32 lg:pb-40 min-h-screen flex flex-col justify-center items-center px-4 sm:px-6"
+          aria-labelledby="hero-title"
+        >
+          <div class="mx-auto max-w-7xl lg:px-8">
+            <div class="mx-auto max-w-4xl text-center">
               <h1
-                class="text-5xl font-semibold font-serif tracking-tight text-balance text-neutral-50 sm:text-7xl"
+                id="hero-title"
+                class="text-4xl sm:text-5xl lg:text-6xl font-semibold font-serif tracking-tight text-balance text-neutral-50"
               >
-                Software legal Para tu empresa
+                La plataforma legal que une abogados y clientes en minutos
               </h1>
-              <p class="mt-8 text-base text-neutral-400 sm:text-lg">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.
+              <p
+                class="mt-6 sm:mt-8 text-sm sm:text-base text-neutral-400 max-w-3xl mx-auto leading-relaxed"
+              >
+                Conecta con clientes, gestiona tus casos y organiza tu despacho
+                en minutos. Para abogados y clientes, todo en un solo lugar.
+                Suscríbete y obtén 1 mes gratis de Arxatec en el lanzamiento.
               </p>
-              <div class="mt-10 flex items-center justify-center gap-x-4">
-                <input
-                  type="text"
-                  placeholder="Ingresa tu correo electrónico"
-                  class="flex-2 w-full rounded-sm bg-white/5 px-4 py-2 text-base text-white outline-1 -outline-offset-1 outline-neutral-50/5 placeholder:text-neutral-400 focus:outline-2 focus:-outline-offset-2 focus:outline-neutral-500 sm:text-sm/6"
-                />
+              <form
+                id="hero-form"
+                class="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto"
+                novalidate
+                aria-label="Formulario de registro para prueba gratuita"
+              >
+                <div class="w-full sm:flex-2 relative">
+                  <label for="email-hero" class="sr-only"
+                    >Correo electrónico</label
+                  >
+                  <input
+                    id="email-hero"
+                    type="email"
+                    name="email"
+                    placeholder="Ingresa tu correo electrónico"
+                    autocomplete="email"
+                    required
+                    aria-describedby="email-hero-error"
+                    class="w-full rounded-sm bg-white/5 px-4 py-2 text-white outline-1 -outline-offset-1 outline-neutral-50/5 placeholder:text-neutral-400 focus:outline-2 focus:-outline-offset-2 focus:outline-neutral-500 text-sm transition-colors border-0 focus:ring-2 focus:ring-neutral-500"
+                  />
+                </div>
                 <button
-                  class="rounded-sm flex-1 w-full bg-neutral-50 px-4 py-2.5 text-sm text-neutral-900 shadow-xs hover:bg-neutral-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-500"
+                  id="button-hero"
+                  type="submit"
+                  class="rounded-sm flex items-center justify-center gap-2 w-full sm:flex-1 sm:w-auto bg-neutral-50 px-6 py-2 text-sm font-semibold text-neutral-900 shadow-sm hover:bg-neutral-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-500 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                  aria-describedby="button-hero-status"
                 >
                   Reservar mi mes gratis
                 </button>
+              </form>
+
+              <!-- Mensajes de estado -->
+              <div class="mt-4 max-w-2xl mx-auto">
+                <div
+                  id="success-message-hero"
+                  class="items-center hidden justify-center gap-2 p-3 bg-green-900/20 border border-green-500/5 rounded-md text-green-400 text-sm"
+                  role="alert"
+                  aria-live="polite"
+                >
+                  <svg
+                    class="w-5 h-5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.236 4.53L7.53 10.53a.75.75 0 00-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span id="success-text-hero"
+                    >¡Estás dentro! Gracias por unirte a la lista de espera, muy
+                    pronto lanzaremos <b>arxatec</b>.</span
+                  >
+                </div>
+
+                <div
+                  id="error-container-hero"
+                  class="hidden items-center justify-center gap-2 p-3 bg-red-900/20 border border-red-500/5 rounded-md text-red-400 text-sm"
+                  role="alert"
+                  aria-live="polite"
+                >
+                  <svg
+                    class="w-5 h-5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zM10 15a1 1 0 100-2 1 1 0 000 2z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span id="error-message-hero">Ups! Ocurrió un error.</span>
+                </div>
               </div>
             </div>
+          </div>
+        </section>
+      </main>
+    </div>
 
+    <section
+      id="solucion"
+      class="bg-neutral-900"
+      aria-labelledby="solution-title"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <div
+          class="mx-auto grid w-full lg:grid-cols-2 gap-8 lg:gap-12 px-4 sm:px-6 lg:px-8 py-12 sm:py-16 bg-zinc-300 rounded-lg shadow-xl"
+        >
+          <div class="order-2 lg:order-1">
             <img
-              width="2432"
-              height="1442"
-              src="./assets/screenshots/desktop.png"
-              alt="App screenshot"
-              class="mt-16 rounded-sm bg-neutral-50/50 shadow-xl ring-1 ring-neutral-50/10 sm:mt-24"
+              src="https://images.pexels.com/photos/5673501/pexels-photo-5673501.jpeg"
+              alt="Profesionales legales trabajando con documentos y tecnología moderna"
+              class="w-full bg-neutral-800 object-cover h-64 sm:h-80 lg:h-full rounded-lg shadow-lg"
+              loading="lazy"
             />
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-neutral-900 py-24 sm:py-32">
-      <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <h2
-          class="text-base/7 font-semibold text-neutral-400 w-full text-center"
-        >
-          Deploy faster
-        </h2>
-        <p
-          class="mt-2 max-w-lg text-4xl font-semibold mx-auto tracking-tight text-pretty text-neutral-50 sm:text-5xl font-serif text-center w-full"
-        >
-          Everything you need to deploy your app
-        </p>
-        <div
-          class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2"
-        >
-          <div class="relative lg:col-span-3">
-            <div
-              class="absolute inset-0 rounded-lg bg-neutral-800 max-lg:rounded-t-md lg:rounded-tl-md"
-            ></div>
-            <div
-              class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]"
-            >
-              <img
-                src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-01-performance.png"
-                alt=""
-                class="h-80 object-cover object-left"
-              />
-              <div class="p-10 pt-4">
-                <h3 class="text-sm/4 font-semibold text-neutral-400">
-                  Performance
-                </h3>
-                <p
-                  class="mt-2 text-xl font-medium tracking-tight text-white font-serif"
-                >
-                  Lightning-fast builds
-                </p>
-                <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                  gravida justo et nulla efficitur, maximus egestas sem
-                  pellentesque.
-                </p>
-              </div>
-            </div>
-            <div
-              class="pointer-events-none absolute inset-0 rounded-lg shadow-sm max-lg:rounded-t-md lg:rounded-tl-md"
-            ></div>
-          </div>
-          <div class="relative lg:col-span-3">
-            <div
-              class="absolute inset-0 rounded-lg bg-neutral-800 lg:rounded-tr-md"
-            ></div>
-            <div
-              class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tr-[calc(2rem+1px)]"
-            >
-              <img
-                src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-01-releases.png"
-                alt=""
-                class="h-80 object-cover object-left lg:object-right"
-              />
-              <div class="p-10 pt-4">
-                <h3 class="text-sm/4 font-semibold text-neutral-400">
-                  Releases
-                </h3>
-                <p
-                  class="mt-2 text-xl font-medium tracking-tight text-white font-serif"
-                >
-                  Push to deploy
-                </p>
-                <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">
-                  Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus
-                  massa, laoreet dapibus ex elit vitae odio.
-                </p>
-              </div>
-            </div>
-            <div
-              class="pointer-events-none absolute inset-0 rounded-lg shadow-sm lg:rounded-tr-md"
-            ></div>
-          </div>
-          <div class="relative lg:col-span-2">
-            <div
-              class="absolute inset-0 rounded-lg bg-neutral-800 lg:rounded-bl-md"
-            ></div>
-            <div
-              class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-bl-[calc(2rem+1px)]"
-            >
-              <img
-                src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-01-speed.png"
-                alt=""
-                class="h-80 object-cover object-left"
-              />
-              <div class="p-10 pt-4">
-                <h3 class="text-sm/4 font-semibold text-neutral-400">Speed</h3>
-                <p
-                  class="mt-2 text-xl font-medium tracking-tight text-white font-serif"
-                >
-                  Built for power users
-                </p>
-                <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">
-                  Sed congue eros non finibus molestie. Vestibulum euismod
-                  augue.
-                </p>
-              </div>
-            </div>
-            <div
-              class="pointer-events-none absolute inset-0 rounded-lg shadow-sm lg:rounded-bl-md"
-            ></div>
-          </div>
-          <div class="relative lg:col-span-2">
-            <div class="absolute inset-0 rounded-lg bg-neutral-800"></div>
-            <div
-              class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]"
-            >
-              <img
-                src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-01-integrations.png"
-                alt=""
-                class="h-80 object-cover"
-              />
-              <div class="p-10 pt-4">
-                <h3 class="text-sm/4 font-semibold text-neutral-400">
-                  Integrations
-                </h3>
-                <p
-                  class="mt-2 text-xl font-medium tracking-tight text-white font-serif"
-                >
-                  Connect your favorite tools
-                </p>
-                <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">
-                  Maecenas at augue sed elit dictum vulputate, in nisi aliquam
-                  maximus arcu.
-                </p>
-              </div>
-            </div>
-            <div
-              class="pointer-events-none absolute inset-0 rounded-lg shadow-sm"
-            ></div>
-          </div>
-          <div class="relative lg:col-span-2">
-            <div
-              class="absolute inset-0 rounded-lg bg-neutral-800 max-lg:rounded-b-md lg:rounded-br-md"
-            ></div>
-            <div
-              class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]"
-            >
-              <img
-                src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-01-network.png"
-                alt=""
-                class="h-80 object-cover"
-              />
-              <div class="p-10 pt-4">
-                <h3 class="text-sm/4 font-semibold text-neutral-400">
-                  Network
-                </h3>
-                <p
-                  class="mt-2 text-xl font-medium tracking-tight text-white font-serif"
-                >
-                  Globally distributed CDN
-                </p>
-                <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">
-                  Aenean vulputate justo commodo auctor vehicula in malesuada
-                  semper.
-                </p>
-              </div>
-            </div>
-            <div
-              class="pointer-events-none absolute inset-0 rounded-lg shadow-sm max-lg:rounded-b-md lg:rounded-br-md"
-            ></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-neutral-900">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 sm:py-24">
-        <div
-          class="mx-auto grid w-full lg:grid-cols-2 px-6 lg:px-8 py-16 bg-zinc-300 rounded-md"
-        >
-          <img
-            src="https://images.pexels.com/photos/5673501/pexels-photo-5673501.jpeg"
-            alt="Imagen de fondo"
-            class="w-full bg-neutral-800 object-cover h-full rounded-md"
-          />
           <div
-            class="px-6 pt-16 pb-24 sm:pt-20 sm:pb-32 lg:col-start-2 lg:px-8 lg:pt-32"
+            class="order-1 lg:order-2 px-0 sm:px-2 pt-8 pb-8 sm:pt-12 sm:pb-16 lg:pt-16 lg:pb-24"
           >
             <div class="mx-auto max-w-2xl lg:mr-0 lg:max-w-lg">
-              <h2 class="text-base font-semibold text-neutral-600">
-                Our track record
-              </h2>
-              <p
-                class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-neutral-900 sm:text-5xl font-serif"
+              <h2
+                id="solution-title"
+                class="text-base font-semibold text-neutral-600"
               >
-                Trusted by thousands of creators worldwide
-              </p>
-              <p class="mt-6 text-base text-neutral-600">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Maiores impedit perferendis suscipit eaque, iste dolor
-                cupiditate blanditiis ratione.
+                Nuestra solución
+              </h2>
+              <h3
+                class="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-pretty text-neutral-900 font-serif"
+              >
+                Gestionar casos legales y conectar con clientes nunca fue tan
+                fácil
+              </h3>
+              <p
+                class="mt-4 sm:mt-6 text-sm sm:text-base text-neutral-600 leading-relaxed"
+              >
+                Abogados y clientes pierden tiempo buscando información,
+                compartiendo documentos y coordinando casos. Con Arxatec, todo
+                eso se simplifica: centraliza tus casos, comunica con clientes y
+                colegas, y gestiona documentos de manera segura y eficiente.
               </p>
               <dl
-                class="mt-16 grid max-w-xl grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 xl:mt-16"
+                class="mt-12 sm:mt-16 grid max-w-xl grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2"
+                role="list"
+                aria-label="Estadísticas de rendimiento de Arxatec"
               >
                 <div
-                  class="flex flex-col gap-y-3 border-l border-neutral-600 pl-6"
+                  class="flex flex-col gap-y-3 border-l-2 border-neutral-600 pl-4 sm:pl-6"
+                  role="listitem"
                 >
-                  <dt class="text-sm/6 text-neutral-600">
-                    Creators on the platform
+                  <dt class="text-sm/6 text-neutral-600 font-medium">
+                    Control total de casos
                   </dt>
                   <dd
-                    class="order-first text-4xl font-bold tracking-tight text-neutral-900 font-serif"
+                    class="order-first text-4xl sm:text-5xl font-bold tracking-tight text-neutral-900 font-serif"
+                    aria-label="Cien por ciento de control"
                   >
-                    8,000+
+                    100%
                   </dd>
                 </div>
                 <div
-                  class="flex flex-col gap-y-3 border-l border-neutral-600 pl-6"
+                  class="flex flex-col gap-y-3 border-l-2 border-neutral-600 pl-4 sm:pl-6"
+                  role="listitem"
                 >
-                  <dt class="text-sm/6 text-neutral-600">Flat platform fee</dt>
-                  <dd
-                    class="order-first text-4xl font-bold tracking-tight text-neutral-900 font-serif"
-                  >
-                    3%
-                  </dd>
-                </div>
-                <div
-                  class="flex flex-col gap-y-3 border-l border-neutral-600 pl-6"
-                >
-                  <dt class="text-sm/6 text-neutral-600">Uptime guarantee</dt>
-                  <dd
-                    class="order-first text-4xl font-bold tracking-tight text-neutral-900 font-serif"
-                  >
-                    99.9%
-                  </dd>
-                </div>
-                <div
-                  class="flex flex-col gap-y-3 border-l border-neutral-600 pl-6"
-                >
-                  <dt class="text-sm/6 text-neutral-600">
-                    Paid out to creators
+                  <dt class="text-sm/6 text-neutral-600 font-medium">
+                    Conexión con abogados
                   </dt>
                   <dd
-                    class="order-first text-4xl font-bold tracking-tight text-neutral-900 font-serif"
+                    class="order-first lowercase text-4xl sm:text-5xl font-bold tracking-tight text-neutral-900 font-serif"
+                    aria-label="Diez segundos"
                   >
-                    $70M
+                    10<span class="text-2xl sm:text-3xl">s</span>
+                  </dd>
+                </div>
+
+                <div
+                  class="flex flex-col gap-y-3 border-l-2 border-neutral-600 pl-4 sm:pl-6"
+                  role="listitem"
+                >
+                  <dt class="text-sm/6 text-neutral-600 font-medium">
+                    Comunicación instantánea
+                  </dt>
+                  <dd
+                    class="order-first text-4xl sm:text-5xl font-bold tracking-tight text-neutral-900 font-serif"
+                    aria-label="Veinticuatro horas, siete días a la semana"
+                  >
+                    24/7
+                  </dd>
+                </div>
+                <div
+                  class="flex flex-col gap-y-3 border-l-2 border-neutral-600 pl-4 sm:pl-6"
+                  role="listitem"
+                >
+                  <dt class="text-sm/6 text-neutral-600 font-medium">
+                    Documentos seguros
+                  </dt>
+                  <dd
+                    class="order-first text-4xl sm:text-5xl font-bold tracking-tight text-neutral-900 font-serif"
+                    aria-label="Cien por ciento de seguridad"
+                  >
+                    100%
                   </dd>
                 </div>
               </dl>
@@ -441,498 +513,524 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="bg-neutral-900">
-      <div class="mx-auto max-w-7xl w-full py-24 sm:py-32 lg:px-8">
-        <div
-          class="mx-auto w-full px-12 sm:px-16 py-12 sm:py-24 bg-stone-300 rounded-md"
+    <div
+      class="mx-auto max-w-7xl w-full py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8"
+    >
+      <div
+        class="mx-auto w-full px-6 sm:px-12 lg:px-16 py-12 sm:py-16 lg:py-24 bg-stone-300 rounded-lg shadow-xl"
+      >
+        <h2
+          id="faq-title"
+          class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-neutral-900 font-serif text-left mb-8 sm:mb-12 lg:mb-16"
         >
-          <h2
-            class="text-4xl font-semibold tracking-tight text-neutral-900 sm:text-5xl font-serif text-left"
-          >
-            Preguntas frecuentes
-          </h2>
+          Preguntas frecuentes
+        </h2>
 
-          <dl class="mt-16 divide-y divide-neutral-900/10">
-            <div class="py-6 first:pt-0 last:pb-0">
-              <dt>
-                <button
-                  type="button"
-                  command="--toggle"
-                  commandfor="faq-0"
-                  class="flex w-full items-start justify-between text-left text-neutral-700"
+        <dl
+          class="space-y-0 divide-y divide-neutral-900/10"
+          role="list"
+          aria-label="Lista de preguntas frecuentes"
+        >
+          <div class="py-4 sm:py-6 first:pt-0 last:pb-0" role="listitem">
+            <dt>
+              <button
+                type="button"
+                command="--toggle"
+                commandfor="faq-0"
+                class="flex w-full items-start justify-between text-left text-neutral-700 hover:text-neutral-900 focus:outline-2 focus:outline-offset-2 focus:outline-neutral-500 rounded-md p-2 transition-colors"
+                aria-expanded="false"
+                aria-controls="faq-0-content"
+                id="faq-0-button"
+              >
+                <span class="text-xl lg:text-2xl font-bold font-serif pr-4"
+                  >¿Quién puede usar Arxatec?</span
                 >
-                  <span class="text-2xl font-bold font-serif"
-                    >¿Qué es Arxatec?</span
-                  >
-                  <span class="ml-6 flex h-7 items-center">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      data-slot="icon"
-                      aria-hidden="true"
-                      class="size-6 in-aria-expanded:hidden"
-                    >
-                      <path
-                        d="M12 6v12m6-6H6"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      data-slot="icon"
-                      aria-hidden="true"
-                      class="size-6 not-in-aria-expanded:hidden"
-                    >
-                      <path
-                        d="M18 12H6"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </dt>
-              <el-disclosure id="faq-0" class="contents">
-                <dd class="mt-2 pr-12">
-                  <p class="text-base text-neutral-700">
-                    I don&#039;t know, but the flag is a big plus. Lorem ipsum
-                    dolor sit amet consectetur adipisicing elit. Quas cupiditate
-                    laboriosam fugiat. Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Sint modi ipsam error numquam quis
-                    consectetur autem saepe dolorum, similique provident iure
-                    qui laborum eum aspernatur tenetur ratione officia cumque
-                    ducimus?
-                  </p>
-                </dd>
-              </el-disclosure>
-            </div>
-            <div class="py-6 first:pt-0 last:pb-0">
-              <dt>
-                <button
-                  type="button"
-                  command="--toggle"
-                  commandfor="faq-1"
-                  class="flex w-full items-start justify-between text-left text-neutral-700"
+                <span
+                  class="ml-4 sm:ml-6 flex h-7 items-center flex-shrink-0"
+                  aria-hidden="true"
                 >
-                  <span class="text-2xl font-bold font-serif"
-                    >How do you make holy water?</span
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    data-slot="icon"
+                    aria-hidden="true"
+                    class="size-5 sm:size-6 in-aria-expanded:hidden transition-transform"
                   >
-                  <span class="ml-6 flex h-7 items-center">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      data-slot="icon"
-                      aria-hidden="true"
-                      class="size-6 in-aria-expanded:hidden"
-                    >
-                      <path
-                        d="M12 6v12m6-6H6"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      data-slot="icon"
-                      aria-hidden="true"
-                      class="size-6 not-in-aria-expanded:hidden"
-                    >
-                      <path
-                        d="M18 12H6"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </dt>
-              <el-disclosure id="faq-1" hidden class="contents">
-                <dd class="mt-2 pr-12">
-                  <p class="text-base text-neutral-700">
-                    You boil the hell out of it. Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Magnam aut tempora vitae odio
-                    inventore fuga aliquam nostrum quod porro. Delectus quia
-                    facere id sequi expedita natus.
-                  </p>
-                </dd>
-              </el-disclosure>
-            </div>
-            <div class="py-6 first:pt-0 last:pb-0">
-              <dt>
-                <button
-                  type="button"
-                  command="--toggle"
-                  commandfor="faq-2"
-                  class="flex w-full items-start justify-between text-left text-neutral-700"
+                    <path
+                      d="M12 6v12m6-6H6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    data-slot="icon"
+                    aria-hidden="true"
+                    class="size-5 sm:size-6 not-in-aria-expanded:hidden transition-transform"
+                  >
+                    <path
+                      d="M18 12H6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </dt>
+            <el-disclosure id="faq-0" class="contents">
+              <dd
+                id="faq-0-content"
+                class="mt-2 pr-8 sm:pr-12"
+                aria-labelledby="faq-0-button"
+              >
+                <p
+                  class="text-sm sm:text-base text-neutral-700 leading-relaxed"
                 >
-                  <span class="text-2xl font-bold font-serif"
-                    >What do you call someone with no body and no nose?</span
-                  >
-                  <span class="ml-6 flex h-7 items-center">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      data-slot="icon"
-                      aria-hidden="true"
-                      class="size-6 in-aria-expanded:hidden"
-                    >
-                      <path
-                        d="M12 6v12m6-6H6"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      data-slot="icon"
-                      aria-hidden="true"
-                      class="size-6 not-in-aria-expanded:hidden"
-                    >
-                      <path
-                        d="M18 12H6"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </dt>
-              <el-disclosure id="faq-2" hidden class="contents">
-                <dd class="mt-2 pr-12">
-                  <p class="text-base text-neutral-700">
-                    Nobody knows. Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Culpa, voluptas ipsa quia excepturi,
-                    quibusdam natus exercitationem sapiente tempore labore
-                    voluptatem.
-                  </p>
-                </dd>
-              </el-disclosure>
-            </div>
-            <div class="py-6 first:pt-0 last:pb-0">
-              <dt>
-                <button
-                  type="button"
-                  command="--toggle"
-                  commandfor="faq-3"
-                  class="flex w-full items-start justify-between text-left text-neutral-700"
+                  Tanto abogados como clientes pueden registrarse. Los clientes
+                  publican casos y los abogados pueden gestionarlos y responder
+                  rápidamente.
+                </p>
+              </dd>
+            </el-disclosure>
+          </div>
+          <div class="py-4 sm:py-6 first:pt-0 last:pb-0" role="listitem">
+            <dt>
+              <button
+                type="button"
+                command="--toggle"
+                commandfor="faq-1"
+                class="flex w-full items-start justify-between text-left text-neutral-700 hover:text-neutral-900 focus:outline-2 focus:outline-offset-2 focus:outline-neutral-500 rounded-md p-2 transition-colors"
+                aria-expanded="false"
+                aria-controls="faq-1-content"
+                id="faq-1-button"
+              >
+                <span class="text-xl lg:text-2xl font-bold font-serif pr-4"
+                  >¿Es seguro compartir documentos y casos?</span
                 >
-                  <span class="text-2xl font-bold font-serif"
-                    >Why do you never see elephants hiding in trees?</span
-                  >
-                  <span class="ml-6 flex h-7 items-center">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      data-slot="icon"
-                      aria-hidden="true"
-                      class="size-6 in-aria-expanded:hidden"
-                    >
-                      <path
-                        d="M12 6v12m6-6H6"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      data-slot="icon"
-                      aria-hidden="true"
-                      class="size-6 not-in-aria-expanded:hidden"
-                    >
-                      <path
-                        d="M18 12H6"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </dt>
-              <el-disclosure id="faq-3" hidden class="contents">
-                <dd class="mt-2 pr-12">
-                  <p class="text-base text-neutral-700">
-                    Because they&#039;re so good at it. Lorem ipsum dolor sit
-                    amet consectetur adipisicing elit. Quas cupiditate
-                    laboriosam fugiat.
-                  </p>
-                </dd>
-              </el-disclosure>
-            </div>
-            <div class="py-6 first:pt-0 last:pb-0">
-              <dt>
-                <button
-                  type="button"
-                  command="--toggle"
-                  commandfor="faq-4"
-                  class="flex w-full items-start justify-between text-left text-neutral-700"
+                <span
+                  class="ml-4 sm:ml-6 flex h-7 items-center flex-shrink-0"
+                  aria-hidden="true"
                 >
-                  <span class="text-2xl font-bold font-serif"
-                    >Why can&#039;t you hear a pterodactyl go to the
-                    bathroom?</span
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    data-slot="icon"
+                    aria-hidden="true"
+                    class="size-5 sm:size-6 in-aria-expanded:hidden transition-transform"
                   >
-                  <span class="ml-6 flex h-7 items-center">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      data-slot="icon"
-                      aria-hidden="true"
-                      class="size-6 in-aria-expanded:hidden"
-                    >
-                      <path
-                        d="M12 6v12m6-6H6"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      data-slot="icon"
-                      aria-hidden="true"
-                      class="size-6 not-in-aria-expanded:hidden"
-                    >
-                      <path
-                        d="M18 12H6"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </dt>
-              <el-disclosure id="faq-4" hidden class="contents">
-                <dd class="mt-2 pr-12">
-                  <p class="text-base text-neutral-700">
-                    Because the pee is silent. Lorem ipsum dolor sit amet,
-                    consectetur adipisicing elit. Ipsam, quas voluptatibus ex
-                    culpa ipsum, aspernatur blanditiis fugiat ullam magnam
-                    suscipit deserunt illum natus facilis atque vero
-                    consequatur! Quisquam, debitis error.
-                  </p>
-                </dd>
-              </el-disclosure>
-            </div>
-            <div class="py-6 first:pt-0 last:pb-0">
-              <dt>
-                <button
-                  type="button"
-                  command="--toggle"
-                  commandfor="faq-5"
-                  class="flex w-full items-start justify-between text-left text-neutral-700"
+                    <path
+                      d="M12 6v12m6-6H6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    data-slot="icon"
+                    aria-hidden="true"
+                    class="size-5 sm:size-6 not-in-aria-expanded:hidden transition-transform"
+                  >
+                    <path
+                      d="M18 12H6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </dt>
+            <el-disclosure id="faq-1" hidden class="contents">
+              <dd
+                id="faq-1-content"
+                class="mt-2 pr-8 sm:pr-12"
+                aria-labelledby="faq-1-button"
+              >
+                <p
+                  class="text-sm sm:text-base text-neutral-700 leading-relaxed"
                 >
-                  <span class="text-2xl font-bold font-serif"
-                    >Why did the invisible man turn down the job offer?</span
+                  Sí, todos los datos se almacenan de forma segura y solo los
+                  abogados o clientes autorizados pueden acceder a cada caso.
+                </p>
+              </dd>
+            </el-disclosure>
+          </div>
+          <div class="py-6 first:pt-0 last:pb-0">
+            <dt>
+              <button
+                type="button"
+                command="--toggle"
+                commandfor="faq-2"
+                class="flex w-full items-start justify-between text-left text-neutral-700 hover:text-neutral-900 focus:outline-2 focus:outline-offset-2 focus:outline-neutral-500 rounded-md p-2 transition-colors"
+              >
+                <span class="text-xl lg:text-2xl font-bold font-serif"
+                  >¿Puedo gestionar varios casos a la vez?</span
+                >
+                <span class="ml-6 flex h-7 items-center">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    data-slot="icon"
+                    aria-hidden="true"
+                    class="size-6 in-aria-expanded:hidden"
                   >
-                  <span class="ml-6 flex h-7 items-center">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      data-slot="icon"
-                      aria-hidden="true"
-                      class="size-6 in-aria-expanded:hidden"
-                    >
-                      <path
-                        d="M12 6v12m6-6H6"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      data-slot="icon"
-                      aria-hidden="true"
-                      class="size-6 not-in-aria-expanded:hidden"
-                    >
-                      <path
-                        d="M18 12H6"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </dt>
-              <el-disclosure id="faq-5" hidden class="contents">
-                <dd class="mt-2 pr-12">
-                  <p class="text-base text-neutral-700">
-                    He couldn&#039;t see himself doing it. Lorem ipsum dolor
-                    sit, amet consectetur adipisicing elit. Eveniet perspiciatis
-                    officiis corrupti tenetur. Temporibus ut voluptatibus,
-                    perferendis sed unde rerum deserunt eius.
-                  </p>
-                </dd>
-              </el-disclosure>
-            </div>
-          </dl>
-        </div>
+                    <path
+                      d="M12 6v12m6-6H6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    data-slot="icon"
+                    aria-hidden="true"
+                    class="size-6 not-in-aria-expanded:hidden"
+                  >
+                    <path
+                      d="M18 12H6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </dt>
+            <el-disclosure id="faq-2" hidden class="contents">
+              <dd class="mt-2 pr-12">
+                <p class="text-sm sm:text-base text-neutral-700">
+                  Sí, Arxatec te permite organizar, seguir y comunicarte sobre
+                  múltiples casos desde un solo panel de control.
+                </p>
+              </dd>
+            </el-disclosure>
+          </div>
+          <div class="py-6 first:pt-0 last:pb-0">
+            <dt>
+              <button
+                type="button"
+                command="--toggle"
+                commandfor="faq-3"
+                class="flex w-full items-start justify-between text-left text-neutral-700 hover:text-neutral-900 focus:outline-2 focus:outline-offset-2 focus:outline-neutral-500 rounded-md p-2 transition-colors"
+              >
+                <span class="text-xl lg:text-2xl font-bold font-serif"
+                  >¿Cómo encuentran los clientes a los abogados?</span
+                >
+                <span class="ml-6 flex h-7 items-center">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    data-slot="icon"
+                    aria-hidden="true"
+                    class="size-6 in-aria-expanded:hidden"
+                  >
+                    <path
+                      d="M12 6v12m6-6H6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    data-slot="icon"
+                    aria-hidden="true"
+                    class="size-6 not-in-aria-expanded:hidden"
+                  >
+                    <path
+                      d="M18 12H6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </dt>
+            <el-disclosure id="faq-3" hidden class="contents">
+              <dd class="mt-2 pr-12">
+                <p class="text-sm sm:text-base text-neutral-700">
+                  Cuando un cliente crea un caso, miles de abogados pueden verlo
+                  y decidir si aceptarlo o ponerse en contacto.
+                </p>
+              </dd>
+            </el-disclosure>
+          </div>
+          <div class="py-6 first:pt-0 last:pb-0">
+            <dt>
+              <button
+                type="button"
+                command="--toggle"
+                commandfor="faq-4"
+                class="flex w-full items-start justify-between text-left text-neutral-700 hover:text-neutral-900 focus:outline-2 focus:outline-offset-2 focus:outline-neutral-500 rounded-md p-2 transition-colors"
+              >
+                <span class="text-xl lg:text-2xl font-bold font-serif"
+                  >¿Necesito pagar para empezar?</span
+                >
+                <span class="ml-6 flex h-7 items-center">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    data-slot="icon"
+                    aria-hidden="true"
+                    class="size-6 in-aria-expanded:hidden"
+                  >
+                    <path
+                      d="M12 6v12m6-6H6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    data-slot="icon"
+                    aria-hidden="true"
+                    class="size-6 not-in-aria-expanded:hidden"
+                  >
+                    <path
+                      d="M18 12H6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </dt>
+            <el-disclosure id="faq-4" hidden class="contents">
+              <dd class="mt-2 pr-12">
+                <p class="text-base text-neutral-700">
+                  No. Puedes dejar tu correo y obtener 1 mes gratis de Arxatec
+                  para probar todas las funcionalidades.
+                </p>
+              </dd>
+            </el-disclosure>
+          </div>
+          <div class="py-6 first:pt-0 last:pb-0">
+            <dt>
+              <button
+                type="button"
+                command="--toggle"
+                commandfor="faq-5"
+                class="flex w-full items-start justify-between text-left text-neutral-700 hover:text-neutral-900 focus:outline-2 focus:outline-offset-2 focus:outline-neutral-500 rounded-md p-2 transition-colors"
+              >
+                <span class="text-xl lg:text-2xl font-bold font-serif"
+                  >¿Puedo comunicarme directamente con mis clientes?</span
+                >
+                <span class="ml-6 flex h-7 items-center">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    data-slot="icon"
+                    aria-hidden="true"
+                    class="size-6 in-aria-expanded:hidden"
+                  >
+                    <path
+                      d="M12 6v12m6-6H6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    data-slot="icon"
+                    aria-hidden="true"
+                    class="size-6 not-in-aria-expanded:hidden"
+                  >
+                    <path
+                      d="M18 12H6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </dt>
+            <el-disclosure id="faq-5" hidden class="contents">
+              <dd class="mt-2 pr-12">
+                <p class="text-sm sm:text-base text-neutral-700">
+                  Sí, abogados y clientes pueden enviar mensajes, compartir
+                  documentos y coordinar reuniones en minutos, todo dentro de la
+                  plataforma.
+                </p>
+              </dd>
+            </el-disclosure>
+          </div>
+        </dl>
       </div>
     </div>
 
-    <div class="bg-neutral-900 py-16 sm:py-24">
-      <div class="mx-auto max-w-7xl w-full sm:px-6 lg:px-8">
+    <section
+      id="registro"
+      class="bg-neutral-900 py-16 sm:py-24"
+      aria-labelledby="cta-title"
+    >
+      <div class="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
         <div
-          class="relative isolate overflow-hidden bg-neutral-800 px-6 py-24 after:pointer-events-none sm:px-24 xl:py-32 rounded-md"
+          class="relative isolate overflow-hidden bg-neutral-800 px-6 sm:px-12 lg:px-24 py-16 sm:py-20 lg:py-32 rounded-lg shadow-2xl"
         >
-          <h2
-            class="mx-auto max-w-3xl text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl font-serif"
-          >
-            Sé de los primeros en probar <br />
-            Arxatec
-          </h2>
-          <p
-            class="mx-auto mt-6 max-w-lg text-center text-base text-neutral-300"
-          >
-            Deja tu correo y te avisaremos cuando lancemos. Tendrás 1 mes gratis
-            para organizar tu empresa sin complicaciones.
-          </p>
-          <form class="mx-auto mt-10 flex max-w-md gap-x-4">
-            <label for="email-address" class="sr-only"
-              >Correo electrónico</label
+          <div class="mx-auto max-w-3xl text-center">
+            <h2
+              id="cta-title"
+              class="text-4xl lg:text-5xl font-semibold tracking-tight text-white font-serif leading-tight"
             >
-            <input
-              id="email-address"
-              type="email"
-              name="email"
-              required
-              placeholder="Ingresa tu correo electrónico"
-              autocomplete="email"
-              class="min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/20 placeholder:text-neutral-400 focus:outline-2 focus:-outline-offset-2 focus:outline-neutral-500 sm:text-sm/6"
-            />
-            <button
-              type="submit"
-              class="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-neutral-900 hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              Prueba Arxatec gratis
+              <br />
+              durante 1 mes
+            </h2>
+            <p
+              class="mx-auto mt-4 sm:mt-6 max-w-2xl text-sm sm:text-base text-neutral-300 leading-relaxed"
             >
-              Reservar mi mes gratis
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <footer class="bg-neutral-900">
-      <div class="mx-auto max-w-7xl px-6 pt-16 pb-8 sm:pt-24 lg:px-8 lg:pt-32">
-        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div class="space-y-8">
-            <img src="./assets/logo.png" alt="Company name" class="h-9" />
-            <p class="text-sm/6 text-balance text-neutral-400">
-              Making the world a better place through constructing elegant
-              hierarchies.
+              Registra tu email y te avisaremos cuando Arxatec esté disponible.
+              Disfruta 1 mes gratis y experimenta la gestión de casos, mensajes
+              y clientes como nunca antes.
             </p>
-            <div class="flex gap-x-6">
-              <a href="#" class="text-neutral-400 hover:text-neutral-300">
-                <span class="sr-only">Facebook</span>
+            <form
+              id="cta-form"
+              class="mx-auto mt-8 sm:mt-10 flex flex-col sm:flex-row max-w-xl gap-4"
+              novalidate
+              aria-label="Formulario de registro para acceso anticipado"
+            >
+              <div class="flex-auto">
+                <label for="email-cta" class="sr-only"
+                  >Correo electrónico</label
+                >
+                <input
+                  id="email-cta"
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Ingresa tu correo electrónico"
+                  autocomplete="email"
+                  aria-describedby="email-cta-error"
+                  class="w-full rounded-md bg-white/5 px-4 py-2 text-white outline-1 -outline-offset-1 outline-white/20 placeholder:text-neutral-400 focus:outline-2 focus:-outline-offset-1 focus:outline-neutral-500 text-sm transition-colors border-0 focus:ring-2 focus:ring-white/30"
+                />
+              </div>
+              <button
+                id="button-cta"
+                type="submit"
+                class="flex-none rounded-md flex items-center justify-center gap-2 bg-white px-6 py-2 text-sm font-semibold text-neutral-900 hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                aria-describedby="button-cta-status"
+              >
+                Reservar mi mes gratis
+              </button>
+            </form>
+
+            <!-- Mensajes de estado CTA -->
+            <div class="mt-4 max-w-xl mx-auto">
+              <div
+                id="success-message-cta"
+                class="hidden items-center justify-center gap-2 p-3 bg-green-900/20 border border-green-500/5 rounded-md text-green-400 text-sm"
+                role="alert"
+                aria-live="polite"
+              >
                 <svg
-                  viewBox="0 0 24 24"
+                  class="w-5 h-5 flex-shrink-0"
                   fill="currentColor"
+                  viewBox="0 0 20 20"
                   aria-hidden="true"
-                  class="size-6"
                 >
                   <path
-                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                    clip-rule="evenodd"
                     fill-rule="evenodd"
-                  />
-                </svg>
-              </a>
-              <a href="#" class="text-neutral-400 hover:text-neutral-300">
-                <span class="sr-only">Instagram</span>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden="true"
-                  class="size-6"
-                >
-                  <path
-                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.236 4.53L7.53 10.53a.75.75 0 00-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
                     clip-rule="evenodd"
+                  />
+                </svg>
+                <span id="success-text-cta">
+                  ¡Estás dentro! Gracias por unirte a la lista de espera, muy
+                  pronto lanzaremos <b>arxatec</b>.
+                </span>
+              </div>
+
+              <div
+                id="error-container-cta"
+                class="hidden items-center justify-center gap-2 p-3 bg-red-900/20 border border-red-500/5 rounded-md text-red-400 text-sm"
+                role="alert"
+                aria-live="polite"
+              >
+                <svg
+                  class="w-5 h-5 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  aria-hidden="true"
+                >
+                  <path
                     fill-rule="evenodd"
-                  />
-                </svg>
-              </a>
-              <a href="#" class="text-neutral-400 hover:text-neutral-300">
-                <span class="sr-only">X</span>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden="true"
-                  class="size-6"
-                >
-                  <path
-                    d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z"
-                  />
-                </svg>
-              </a>
-              <a href="#" class="text-neutral-400 hover:text-neutral-300">
-                <span class="sr-only">GitHub</span>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden="true"
-                  class="size-6"
-                >
-                  <path
-                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zM10 15a1 1 0 100-2 1 1 0 000 2z"
                     clip-rule="evenodd"
-                    fill-rule="evenodd"
                   />
                 </svg>
-              </a>
-              <a href="#" class="text-neutral-400 hover:text-neutral-300">
-                <span class="sr-only">YouTube</span>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden="true"
-                  class="size-6"
-                >
-                  <path
-                    d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
-                    clip-rule="evenodd"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </a>
+                <span id="error-message-cta">Ups! Ocurrió un error.</span>
+              </div>
             </div>
           </div>
         </div>
-        <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-          <p class="text-sm/6 text-neutral-400">
-            &copy; 2024 Your Company, Inc. All rights reserved.
+      </div>
+    </section>
+
+    <footer
+      class="bg-neutral-900 mb-16 sm:mb-20"
+      role="contentinfo"
+      aria-labelledby="footer-heading"
+    >
+      <h2 id="footer-heading" class="sr-only">Información de la empresa</h2>
+      <div
+        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-24 pb-8"
+      >
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+          <div class="space-y-6 sm:space-y-8">
+            <img
+              src="./assets/logo.png"
+              alt="Logo de Arxatec"
+              class="h-8 sm:h-9 w-auto"
+            />
+            <p
+              class="text-sm text-balance text-neutral-400 leading-relaxed max-w-md"
+            >
+              Arxatec es una plataforma de gestión de casos legales que permite
+              a los abogados y clientes gestionar sus casos de forma sencilla y
+              eficiente.
+            </p>
+          </div>
+        </div>
+        <div
+          class="border-t border-white/10 pt-6 sm:pt-8 mt-12 sm:mt-16 lg:mt-20"
+        >
+          <p class="text-xs sm:text-sm text-neutral-400">
+            &copy; 2025 Arxatec. Todos los derechos reservados.
           </p>
         </div>
       </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="./src/index.js"></script>
   </body>
 </html>
